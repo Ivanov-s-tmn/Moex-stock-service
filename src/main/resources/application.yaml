@@ -1,0 +1,17 @@
+server:
+  port: 8089
+
+moex:
+  bonds:
+    corporate:
+      url: "https://iss.moex.com/iss/engines/stock/markets/bonds/boards/TQCB/securities.xml?iss.meta=off&iss.only=securities&securities.columns=SECID,PREVADMITTEDQUOTE,SHORTNAME"
+    gov:
+      url: "https://iss.moex.com/iss/engines/stock/markets/bonds/boards/TQOB/securities.xml?iss.meta=off&iss.only=securities&securities.columns=SECID,PREVADMITTEDQUOTE,SHORTNAME"
+logging:
+  level:
+    com.ivanov.moexstockservice.moexclient : DEBUG
+
+spring:
+  cache:
+    caffeine:
+      spec: maximumSize=48, expireAfterAccess=1h
